@@ -1,0 +1,91 @@
+#################################################获取论坛数据
+https://m.zontes.com/ashx/moments/forumListData.ashx
+值jsonpCallback:forumIndexCallback
+值method:forumIndex
+(按照回复时间)   首次id：0          第二页id:2022/11/11  日期为现在的日期   第三页用2022/11/10  日期为昨天的日期以   此类推
+（按照发帖时间）第一页值id：0  第二页用第一页最后一个id   
+值sortType:（reply按照回复时间，time按照发帖时间）
+值ACCESSTOKEN
+##############################################获取其他用户资料
+https://m.zontes.com/ashx/moments/userHomePage.ashx
+jsonpCallback:userInfoCallback
+method:userInfo
+pageCode:Z202106210049
+##############################################  根据帖子id获取帖子内容
+/rbook/dongtai.ashx
+method:detailNew
+id:130544
+ACCESSTOKEN:
+###############################################根据帖子id获取帖子评论
+/rbook/dongtai.ashx?
+method: detailNewComment
+id: 130544
+cmid:0    //首次为0   n次为评论页最后一条ID
+locationID:
+filterType:desc
+ACCESSTOKEN
+返回值中floorSum为总的评论数
+###############################################给帖子（评论）点赞
+/rbook/dongtai.ashx?
+method likeOpus  评论（likeCm）
+id 130819 帖子id
+（评论才有cid：评论的id）  
+ACCESSTOKEN
+#############################################回复帖子（首先要生成图片type=png）可选
+https://m.zontes.com/rbook/dongtai.ashx
+method	comment
+id	131112
+cmContent	这个改成多少钱啊
+picturePath	20221111181049_3343.png //发布的图片
+voicePath	（可选）				//发布的视屏
+ByUsercode	Z201801010013
+cmid	（可选）
+atSome	（可选）
+ACCESSTOKEN	
+##################################################发送普通帖子+
+https://m.zontes.com/rbook/dongtai.ashx
+method	saveAndroidDt
+usercode	Z202106210049
+ititle	（可选）大标题
+picStr	20221111182753_6479.png  //评论
+iContent	310M清除保养灯是哪个按键啊
+atSome	  //@谁可选 （可选）
+iview	1
+VideoPath	（可选）
+voicePath		（可选）
+ACCESSTOKEN	
+###################################################删除帖子
+https://m.zontes.com/rbook/dynamic.ashx
+jsonpCallback  deldtCallback
+method	deldt
+id       131113
+ACCESSTOKEN
+返回  失败   deldtCallback({"isLogin":"True", "result":"-1"})
+
+
+###################################################上传视频
+https://m.zontes.com/ashx/makefriends/userinfo.ashx
+type:mp4
+method:publicUploadFileNew
+url:/GX/CardVideo/
+imgdata:Ba64
+结果：{"isLogin":"False", "result":"success","fileName":"20221111165723_9603.mp4","fileUrl":"https://www.sharpon.com/Tayoimg/GX/CardVideo/20221111165723_9603.mp4"}
+#################################################上传图片
+https://m.zontes.com/ashx/makefriends/userinfo.ashx
+method：publicUploadFileNew
+url：/GX/Friend/
+imgdata：Ba64
+type:jpg 是发布帖子用可能    （png是回复帖子用）
+结果{"isLogin":"False", "result":"success","fileName":"20221111163714_5082.jpg","fileUrl":"https://www.sharpon.com/Tayoimg/GX/Friend/20221111163714_5082.jpg"}
+#####################################################发布视频帖子（需要上传视频.then上传图片）
+https://m.zontes.com/rbook/dongtai.ashx
+method:saveAndroidDt
+usercode:Z201801010013
+ititle:新灯光
+picStr:
+iContent:晚上跑夜路不要太舒服了
+atSome:
+iview:1
+VideoPath:20221111163714_5082.jpg;20221111163715_5112.mp4  显示的封面视频；里面的视频
+voicePath:
+ACCESSTOKEN:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJUQVlPIE1JUyIsImlhdCI6MTY2ODE1MTc1NCwiZXhwIjoxNjc1OTI3NzU0LCJhdWQiOiJodHRwczovL21zbS56b250ZXMuY29tIiwic3ViIjoiQWxsIFVzZXJzIiwianRpIjoiMjAyMjExMTEwMzI5MTQ1MTEiLCJ1c2VySWQiOiJaMjAyMTA2MjEwMDQ5IiwidXNlck5hbWUiOiIxNTc1NjI0MjM5MiIsInVzZXJSb2xlIjoibWVtYmVyVmlwIn0.xmGse108UK4yVWPEXMCqizbGAwVm6EcHToc-mZb--rg

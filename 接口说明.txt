@@ -1,0 +1,27 @@
+登录获取token（post请求）
+http://localhost:5139/api/login
+请求参数
+method:login
+logintype:SPLogin
+name:15756242392
+pwd:gun147258
+错误回调
+{
+    "isLogin": "False",
+    "result": "fail",
+    "failmsg": "该账号尚未注册"
+}
+正确回调
+{
+    "status": 0,
+    "msg": "成功获取token",
+    "data": {
+   中间件token   "tokenStr": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0xvZ2luIjoiVHJ1ZSIsInJlc3VsdCI6InN1Y2Nlc3MiLCJ1c2VyIjoiMTU3NTYyNDIzOTIiLCJVc2VyQ29kZSI6IloyMDIxMDYyMTAwNDkiLCJTaWduQ29kZSI6IkE3MTMyNkVENkRENUQ4NzE4ODA1NEE2NEJEN0Y3NzA3IiwiYWNjZXNzVG9rZW4iOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuZXlKcGMzTWlPaUpVUVZsUElFMUpVeUlzSW1saGRDSTZNVFkyTnprNE5EQXhNaXdpWlhod0lqb3hOamMxTnpZd01ERXlMQ0poZFdRaU9pSm9kSFJ3Y3pvdkwyMXpiUzU2YjI1MFpYTXVZMjl0SWl3aWMzVmlJam9pUVd4c0lGVnpaWEp6SWl3aWFuUnBJam9pTWpBeU1qRXhNRGt3TkRVek16SXhOekFpTENKMWMyVnlTV1FpT2lKYU1qQXlNVEEyTWpFd01EUTVJaXdpZFhObGNrNWhiV1VpT2lJeE5UYzFOakkwTWpNNU1pSXNJblZ6WlhKU2IyeGxJam9pYldWdFltVnlWbWx3SW4wLkZoZmdRRFhsRFkyU1Racmhzbmp1NnFLdWQzV1BPN3JuNU9iQ092clNVMGsiLCJpYXQiOjE2Njc5ODQwMzQsImV4cCI6MTY2ODAyMDAzNH0.Y8aYHCvgbFX0EyiFGJKTsbbAs1d228MARNNv71flA2Q",
+        "isLogin": "True",
+        "result": "success",
+        "user": "15756242392",
+        "UserCode": "Z202106210049",
+        "SignCode": "A71326ED6DD5D87188054A64BD7F7707",
+     升仕摩托车token   "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJUQVlPIE1JUyIsImlhdCI6MTY2Nzk4NDAxMiwiZXhwIjoxNjc1NzYwMDEyLCJhdWQiOiJodHRwczovL21zbS56b250ZXMuY29tIiwic3ViIjoiQWxsIFVzZXJzIiwianRpIjoiMjAyMjExMDkwNDUzMzIxNzAiLCJ1c2VySWQiOiJaMjAyMTA2MjEwMDQ5IiwidXNlck5hbWUiOiIxNTc1NjI0MjM5MiIsInVzZXJSb2xlIjoibWVtYmVyVmlwIn0.FhfgQDXlDY2STZrhsnju6qKud3WPO7rn5ObCOvrSU0k"
+    }
+}
