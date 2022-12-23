@@ -25,3 +25,219 @@ pwd:gun147258
      升仕摩托车token   "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJUQVlPIE1JUyIsImlhdCI6MTY2Nzk4NDAxMiwiZXhwIjoxNjc1NzYwMDEyLCJhdWQiOiJodHRwczovL21zbS56b250ZXMuY29tIiwic3ViIjoiQWxsIFVzZXJzIiwianRpIjoiMjAyMjExMDkwNDUzMzIxNzAiLCJ1c2VySWQiOiJaMjAyMTA2MjEwMDQ5IiwidXNlck5hbWUiOiIxNTc1NjI0MjM5MiIsInVzZXJSb2xlIjoibWVtYmVyVmlwIn0.FhfgQDXlDY2STZrhsnju6qKud3WPO7rn5ObCOvrSU0k"
     }
 }
+
+
+####################################################################获取论坛列表
+路径：/bbs/Bbs/time
+必选（必填）： 前端访问路径    reply按照回复时间排序  time发帖时间排序 
+值（必填）  ：id    token
+演示 /bbs/getbbslist/reply  =>id:2022 12 / 10 11:88:00        /bbs/getbbslist/time    =>id:15155
+返回信息{太多 lastID是根据路径类型返回数据}
+###############################################################################获取用户资料（头部 ：0 型号：1 帖子2）
+URl：/bbs/User   三合一
+路径（必填）：
+值（必填）  ：
+count:(头部 ：0  型号：1   帖子2） 
+pageCode   Z201810150005
+id:0  在帖子：（2）里面请求  默认0后端已配好   其他情况不用填写
+token 
+
+演示 
+返回信息{}
+
+
+###############################################################################根据id获取帖子资料
+URl：/bbs/gettail
+路径（必填）：
+值（必填）  ：count:(帖子 ：0  评论数据：1   点赞2）  id
+
+值   获取帖子：id 130923  //帖子id
+
+值   获取帖子 评论数据： count:1  
+	cmid:0    //分页
+	locationID: //不清楚
+	filterType:desc //不清楚
+	id:130923	  //帖子id
+
+演示  
+返回信息{}
+
+
+###############################################################################对评论或者是帖子点赞
+URl：/bbs/like
+路径（必填）： 0对帖子点赞  1对评论点赞
+值（必填）  ：对帖子点赞 count=0   id=帖子id    
+值（必填）  ：对评论点赞 count=1   id=帖子id    cid: 评论id
+演示 
+返回信息{}
+
+
+###############################################################################回复帖子
+URl：/postReply
+method  帖子方法comment   回复评论cmcomment
+路径（必填）：type 0  回复贴纸 1回复评论
+值（必填） id 帖子id  cmContent：评论内容  ByUsercode Z202003130030 通知誰：帖子的发起人
+值（选填）picturePath：图片地址  voicePath视屏地址     cmid不清楚     atSome艾特谁：Z202204080058	
+演示 
+返回信息{}
+<img src=f013.png class= emoticon>微笑标签
+###############################################################################回复评论
+voicePath
+picturePath	
+method	cmcomment
+id	131149
+cmid	1959253  
+cmContent	对的
+ByUsercode	Z202205310071
+atSome	
+ACCESSTOKEN	
+URl： https://m.zontes.com/rbook/dongtai.ashx
+路径（必填）：type 1  回复评论
+值（必填）  ：id：131149贴纸id  cmid 评论的id1959253  	 cmContent 评论内容  	通知誰ByUsercode评论人的id（Z202205310071）
+演示  
+返回信息{}
+
+
+###############################################################################上传图片
+URl：/bbs/makefriends
+路径（必填）：type 0 上传图片  1上传mp4
+值（必填）  ：imgdata：ba64
+演示 
+返回信息{}
+###############################################################################
+URl：
+路径（必填）：
+值（必填）  ：id
+演示 
+返回信息{}
+
+
+###############################################################################
+URl：
+路径（必填）：
+值（必填）  ：id
+演示 
+返回信息{}
+
+
+###############################################################################
+URl：
+路径（必填）：
+值（必填）  ：id
+演示 
+返回信息{}
+
+
+###############################################################################
+URl：
+路径（必填）：
+值（必填）  ：id
+演示 
+返回信息{}
+
+
+###############################################################################
+URl：
+路径（必填）：
+值（必填）  ：id
+演示 
+返回信息{}
+
+
+###############################################################################
+URl：
+路径（必填）：
+值（必填）  ：id
+演示 
+返回信息{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+修改邮箱 http://localhost:5139/user/updata/Email   值email  
+修改QQ http://localhost:5139/user/updata/Qq  值QQ  
+修改用户真实名字 http://localhost:5139/user/updata/Name  值name
+###########################
+修改证件信息 http://localhost:5139/user/updata/Certificate  
+值
+province:北京市
+county:北京市
+city:东城区
+type:身份证
+code:6666
+address:撒大声
+postcode: 621600
+#########################
+修改性别/user/updata/Sex   值Sex 
+修改婚姻状况 /user/updata/Marry 值Marry
+修改教育程度 /user/updata/Edu 值 Edu
+修改所在行业  /user/updata/Industry 值Industry
+修改职位 /user/updata/Position 值Position
+修改爱好 /user/updata/Hobby 值Hobby
+修改发票信息    /user/updata/Bill 值{
+iComHead: 个人  （个人 单位  无需）
+personInfo: 11111//上牌人信息
+personCode: 510723200104238881//上牌人身份证号码}
+修改居住地址  /user/updata/Liveaddr 值{
+province: 天津市
+county: 天津市
+city: 和平区
+address: xx小区}
+###################################获取购物车（get请求）#############################
+/user/shopmall 值带上token  可选address（四川省 成都市 郫县）格式
+###################################增删改查（post请求）#############################
+/user/shopcartline 值       itemcode：商品id   acttype：（add+ jian-）  
+返回{
+    "status": 0,
+    "msg": "获取成功",
+    "data": {
+        "isLogin": "True",
+        "result": "success",
+        "subCount": "2",
+        "subPrice": "110"
+    }
+}
+##################################获取联保信息（get）############
+/user/getInsuranceVehicleByUser   带上toke即可
+##################################获取未退旧件（get）###############
+/user/getNBThreePackage    带上toke即可
+{
+    "isLogin": "True",
+    "dataInfo": [
+        [],
+        {
+            "credit": "Z202106210049",
+            "creditType": "好",
+            "csum": "0.00",
+            "csum0": "0.00"
+        }
+    ]
+}
+############################## 结伴同行是否同意参与(post)#######
+/user/setPartnersCB  值issearch：0关  1开
+##############################获取商超主页list################
+/home/main  值：用户token
+返回结果 motorlist 主要商品列表  clotheslist周边商品  spaddress用户地区
